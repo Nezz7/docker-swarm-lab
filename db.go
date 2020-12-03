@@ -16,12 +16,12 @@ func db() *mongo.Client {
 	clientOptions := options.Client().ApplyURI(DbURI)
 	client, err := mongo.Connect(context.TODO(), clientOptions)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 	// Check the connection
 	err = client.Ping(context.TODO(), nil)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 	fmt.Println("Connected to MongoDB!")
 	return client

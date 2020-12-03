@@ -37,7 +37,7 @@ func createProfile(w http.ResponseWriter, r *http.Request) {
 	}
 	insertResult, err := userCollection.InsertOne(context.TODO(), person)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
 	json.NewEncoder(w).Encode(insertResult.InsertedID)
@@ -60,7 +60,7 @@ func getAllUsers(w http.ResponseWriter, r *http.Request) {
 		var elem primitive.M
 		err := cur.Decode(&elem)
 		if err != nil {
-			log.Fatal(err)
+			log.Println(err)
 		}
 
 		results = append(results, elem)
