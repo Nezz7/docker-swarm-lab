@@ -17,6 +17,6 @@ func main() {
 	s.HandleFunc("/user", createProfile).Methods("POST")
 	s.HandleFunc("/users", getAllUsers).Methods("GET")
 
-	log.Fatal(http.ListenAndServe(":8080", s))
+	log.Println(http.ListenAndServe(":8080", s))
 
 }
