@@ -10,7 +10,7 @@ import (
 )
 
 //DbURI the URI of the database server
-const DbURI = "mongodb://localhost:27017"
+const DbURI = "mongodb://mongo:27017"
 
 func db() *mongo.Client {
 	clientOptions := options.Client().ApplyURI(DbURI)
