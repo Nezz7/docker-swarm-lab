@@ -5,18 +5,18 @@
     a simple Go service that communicates with MongoDB.
 ## Deploy
 1. Clone this repository <br>
-`git clone https://github.com/Nezz7/docker-swarm-lab.git`
+`$ git clone https://github.com/Nezz7/docker-swarm-lab.git`
 2. Change the current working directory <br>
-`cd /docker-swarm-lab`<br>
+`$ cd /docker-swarm-lab`<br>
 3. Create the docker image : server-image  <br>
-`docker build -t server-image .`<br>
+`$ docker build -t server-image .`<br>
 4. Initialize the swarm <br>
-`docker swarm init`<br>
+`$ docker swarm init`<br>
 Don't forget to save the token.<br>
 5. Deploy the stack to the swarm<br>
-`docker stack deploy --compose-file docker-compose.yml  $SERVICE_NAME`<br>
+`$ docker stack deploy --compose-file docker-compose.yml  $SERVICE_NAME`<br>
 6. Check that it’s running <br>
-`socker stack services $SERVICE_NAME`<br>
+`$ docker stack services $SERVICE_NAME`<br>
 
 ## Exposed Ports
 
