@@ -1,7 +1,7 @@
 # Docker swarm lab
 
 ## Overview 
-    This lab create a high availability architecture using docker swarm :
+    This lab creates a high availability architecture using docker swarm :
     a simple Go service that communicates with MongoDB.
 ## Deploy
 1. Clone this repository <br>
