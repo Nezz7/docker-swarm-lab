@@ -4,15 +4,22 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"os"
 
+	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-//DbURI the URI of the database server
-const DbURI = "mongodb://mongo:27017"
-
 func db() *mongo.Client {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
+	DBHost := os.Getenv("DB_HOST")
+	DBPort := os.Getenv("DB_PORT")
+	DbURI := fmt.Sprintf("mongodb://%s:%s", DBHost, DBPort)
 	clientOptions := options.Client().ApplyURI(DbURI)
 	client, err := mongo.Connect(context.TODO(), clientOptions)
 	if err != nil {
