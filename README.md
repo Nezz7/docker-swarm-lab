@@ -33,7 +33,7 @@ Get all users
 
 `http://$SERVER_IP:8080/api/users`
 
-Exmple of response :
+Example of response :
 ```
 [
     {
@@ -50,12 +50,11 @@ Post a user
 
 `http://$SERVER_IP:8080/api/user`
 
-Exmple of Body :
+Example of Body :
 ```
-[
-    {
-        "age": 18,
-        "name": "nezz"
-    }
-]
+{
+	"name": "nezz",
+	"age": 18
+	
+}
 ```
